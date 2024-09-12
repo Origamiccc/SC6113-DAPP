@@ -8,9 +8,9 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
+            background: linear-gradient(135deg, #dfe9f3 10%, #ffffff 100%);
             margin: 0;
-            padding: 20px;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,57 +20,53 @@
         .container {
             background-color: #ffffff;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             max-width: 400px;
             width: 100%;
             text-align: center;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: 20px;
             color: #333;
+            font-weight: 600;
         }
 
         form {
             margin: 15px 0;
         }
 
-
-        input[type="submit"] {
+        input[type="submit"], button {
             background-color: #007bff;
             color: white;
             padding: 12px 24px;
             border: none;
-            border-radius: 5px;
-            font-size: 18px;
+            border-radius: 6px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             width: 100%;
             max-width: 300px;
         }
 
+        input[type="submit"]:hover, button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active, button:active {
+            background-color: #004494;
+            transform: translateY(0);
+        }
+
         input, button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 4px;
+            padding: 12px;
+            border-radius: 6px;
             border: 1px solid #ddd;
             font-size: 16px;
         }
-
-        button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
 
         p {
             margin-top: 20px;
@@ -84,7 +80,7 @@
             }
 
             h2 {
-                font-size: 20px;
+                font-size: 24px;
             }
 
             input, button {
@@ -101,23 +97,21 @@
     <div class="container">
         <h2>Hi, {{r}}, how can I help you today?</h2>
         <br>
-        <form action = "/store_money" method="post">
+        <form action="/store_money" method="post">
             <input type="submit" value="Store Money">
         </form>
         <br>
-        <form action = "/transfer_money" method="post">
+        <form action="/transfer_money" method="post">
             <input type="submit" value="Transfer Money">
         </form>
         <br>
-        <form action = "/admin" method="post">
-            <input type="submit" value="admin">
+        <form action="/admin" method="post">
+            <input type="submit" value="Admin">
         </form>
         <br>
-        <form action = "/" method="post">
+        <form action="/" method="post">
             <input type="submit" value="Logout">
         </form>
     </div>
 </body>
 </html>
-
-
